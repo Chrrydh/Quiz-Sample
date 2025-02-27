@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Master</title>
+    <style>
+        /* Import Google Font */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+        
+        /* General Body Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        /* Header Styling */
+        h1 {
+            text-align: center;
+            margin: 20px;
+            font-weight: 600;
+            color: #fff;
+            padding: 20px;
+            background: linear-gradient(to right, #4CAF50, #81C784);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Container Styling */
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Button Styling */
+        button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Question and Choices Styling */
+        .question {
+            margin: 20px 0;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        /* Hide Initially */
+        #showQuizButton,
+        #quizQuestions,
+        .choices {
+            display: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+
+            button {
+                font-size: 14px;
+                padding: 8px 15px;
+            }
+        }
+    </style>
+    <script>
+        // Toggle Visibility of Sections
+        function toggleElement(elementId) {
+            const element = document.getElementById(elementId);
+            if (element.style.display === 'none' || element.style.display === '') {
+                element.style.display = 'block';
+            } else {
+                element.style.display = 'none';
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Quiz Master</h1>
+    <div class="container">
+        <!-- First Button: Click Here -->
+        <button onclick="toggleElement('showQuizButton')">Click Here</button>
+        
+        <!-- Second Button: Show Quiz -->
+        <button id="showQuizButton" onclick="toggleElement('quizQuestions')">Show Quiz</button>
+
+        <!-- Quiz Questions -->
+        <div id="quizQuestions">
+            <!-- Question 1 (Replaced with IT Question) -->
+            <div class="question">
+                <p>Q1. What does "URL" stand for?</p>
+                <button onclick="toggleElement('choicesQ1')">Show/Hide Choices for Q1</button>
+                <ul id="choicesQ1" class="choices">
+                    <li><input type="radio" name="q1" value="a"> Uniform Resource Locator</li>
+                    <li><input type="radio" name="q1" value="b"> Universal Resource Locator</li>
+                    <li><input type="radio" name="q1" value="c"> Uniform Resource Link</li>
+                    <li><input type="radio" name="q1" value="d"> Universal Resource Link</li>
+                </ul>
+            </div>
+
+            <!-- Question 2 (Replaced with IT Question) -->
+            <div class="question">
+                <p>Q2. What is the main function of an Operating System?</p>
+                <button onclick="toggleElement('choicesQ2')">Show/Hide Choices for Q2</button>
+                <ul id="choicesQ2" class="choices">
+                    <li><input type="radio" name="q2" value="a"> Manages hardware and software resources</li>
+                    <li><input type="radio" name="q2" value="b"> Runs web servers</li>
+                    <li><input type="radio" name="q2" value="c"> Provides network security</li>
+                    <li><input type="radio" name="q2" value="d"> Handles data storage</li>
+                </ul>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question">
+                <p>Q3. What does HTML stand for?</p>
+                <button onclick="toggleElement('choicesQ3')">Show/Hide Choices for Q3</button>
+                <ul id="choicesQ3" class="choices">
+                    <li><input type="radio" name="q3" value="a"> Hyper Text Markup Language</li>
+                    <li><input type="radio" name="q3" value="b"> High Transfer Markup Language</li>
+                    <li><input type="radio" name="q3" value="c"> Hyperlink Text Multiple Language</li>
+                    <li><input type="radio" name="q3" value="d"> Hyper Tool Multi Language</li>
+                </ul>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question">
+                <p>Q4. What is the purpose of CSS in web development?</p>
+                <button onclick="toggleElement('choicesQ4')">Show/Hide Choices for Q4</button>
+                <ul id="choicesQ4" class="choices">
+                    <li><input type="radio" name="q4" value="a"> To structure a web page</li>
+                    <li><input type="radio" name="q4" value="b"> To style a web page</li>
+                    <li><input type="radio" name="q4" value="c"> To add interactivity to a web page</li>
+                    <li><input type="radio" name="q4" value="d"> To create databases</li>
+                </ul>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question">
+                <p>Q5. What does the "console.log()" function do in JavaScript?</p>
+                <button onclick="toggleElement('choicesQ5')">Show/Hide Choices for Q5</button>
+                <ul id="choicesQ5" class="choices">
+                    <li><input type="radio" name="q5" value="a"> Executes a command</li>
+                    <li><input type="radio" name="q5" value="b"> Logs messages to the console</li>
+                    <li><input type="radio" name="q5" value="c"> Deletes variables</li>
+                    <li><input type="radio" name="q5" value="d"> Sends HTTP requests</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
